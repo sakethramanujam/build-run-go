@@ -1,7 +1,8 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/build-compose-go/build-compose-go', '.']
+  args: ['build', '-t', 'gcr.io/build-compose-go/build-compose-go:latest', 
+         '--cache-from', 'gcr.io/build-compose-go/build-compose-go:latest', '.']
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/build-compose-go/build-compose-go']
@@ -9,4 +10,4 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'build-compose-go', '--image', 'gcr.io/build-compose-go/build-compose-go', '--region', 'us-central1','--platform', 'managed']
 images:
-- gcr.io/build-compose-go/build-compose-go
+- gcr.io/build-compose-go/build-compose-go:latest
