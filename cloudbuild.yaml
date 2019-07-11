@@ -7,6 +7,6 @@ steps:
   args: ['push', 'gcr.io/build-compose-go/build-compose-go']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'build-compose-go', '--image', 'gcr.io/build-compose-go/build-compose-go', '--region', 'us-east1','--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'build-compose-go', '--image', 'gcr.io/build-compose-go/build-compose-go', '--region', 'us-central1','--platform', 'managed']
 images:
 - gcr.io/build-compose-go/build-compose-go
