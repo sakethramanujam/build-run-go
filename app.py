@@ -19,7 +19,7 @@ def square(n):
        return str(n**2)
 
 @app.route('/cube/<int:n>')
-def square(n):
+def cube(n):
        return str(n**3)
 
 if __name__=='__main__':
