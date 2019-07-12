@@ -22,5 +22,9 @@ def square(n):
 def cube(n):
        return str(n**3)
 
+@app.route('/quad/<int:n>')
+def quad(n):
+       return str(n**4)
+
 if __name__=='__main__':
     app.run(debug=True,host='0.0.0.0',port=8080)
